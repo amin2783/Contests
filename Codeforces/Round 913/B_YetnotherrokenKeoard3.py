@@ -9,19 +9,19 @@ for tc in range(int(input())):
 
     while n<len(keypresses):
         if keypresses[n] == "B":
-            del keypresses[n]
+            keypresses[n] = ""
             if len(uppers):
-                del keypresses[uppers[-1]]
-                n -= 2
-            else:
-                n -= 1
+                keypresses[uppers.pop()] = ""
+            #     n -= 2
+            # else:
+            #     n -= 1
         elif keypresses[n] == "b":
-            del keypresses[n]
+            keypresses[n] = ""
             if len(lowers):
-                del keypresses[lowers[-1]]
-                n -= 2
-            else:
-                n -= 1
+                keypresses[lowers.pop()] = ""
+            #     n -= 2
+            # else:
+            #     n -= 1
         else:
             if keypresses[n].isupper():
                 uppers.append(n)
